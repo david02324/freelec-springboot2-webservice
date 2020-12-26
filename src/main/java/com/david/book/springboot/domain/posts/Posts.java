@@ -13,9 +13,11 @@ import javax.persistence.*;
 public class Posts extends BaseTimeEntity {
 
     @Id
+    // GenType.IDENTITY를 적용해여 auto_increment가 적용됨
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    // Column 을 써야 length나 nullable 옵션 변경 가능
     @Column(length = 500,nullable = false)
     private String title;
 
